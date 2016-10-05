@@ -131,7 +131,7 @@
 
 .flex.start-center,
 .flex-container.start-center {
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -160,8 +160,8 @@
 }
 
 .flex.end-center,
-.flex-container.start-center {
-  align-items: end;
+.flex-container.end-center {
+  align-items: flex-end;
   justify-content: center;
 }
 
