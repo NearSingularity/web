@@ -1,17 +1,26 @@
 const component = {
     model: {
         states: [],
+        init() {
+            
+            
+        },
         update(msg, ...vals){
             this.states.push(this.model);
+            
             for(let i = 0; i < vals.length; i++){
                 let prop = vals[i][0];
                 let val  = vals[i][1];
-                this.model[prop] = val;
+                this[prop] = val;
             }
-            this.view.update(msg);
+            
+            component.view.update(msg);
         } 
     },
     view: {
+        init() {
+            
+        },
         update(msg){
             if(typeof msg != "string") return;
             
@@ -21,5 +30,7 @@ const component = {
                 break;
             }
         }
+    },
+    init() {
     }
 };
