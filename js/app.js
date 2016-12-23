@@ -1,9 +1,6 @@
 const component = {
     model: {
-        msgs: {
-            update: "update"  
-        },
-        state: {
+         state: {
             current : 0,
             
             get(){
@@ -35,10 +32,9 @@ const component = {
             
         },
         update(msg){
+            if(typeof msg != "string") return;
+            
             switch(msg){
-                case "update":
-                    
-                break;
                 default:
                     console.warn("You passed your view's update a message it didn't recognize: "+msg)
                 break;
@@ -46,6 +42,6 @@ const component = {
         }
     },
     init() {
-        this.model.init();
+        
     }
 };
