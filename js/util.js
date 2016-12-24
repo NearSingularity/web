@@ -150,3 +150,8 @@ function quickSort(arr, left, right) {
     
     return arr;
 }
+
+const getElement    = s => document.querySelector(s);
+const getElements   = s => document.querySelectorAll(s);
+const getById       = i => document.getElementById(i);
+const getByClass    = c => document.getElementsByClassName(c);
