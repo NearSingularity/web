@@ -1,0 +1,28 @@
+* {
+    position: relative;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-bg-color: #FFF;
+    --main-color: #000;
+    
+    --success-color: #4CAF50;
+    --error-color: #F44336;
+}
+
+body {
+    margin: 0;
+    background-color: var(--main-bg-color);
+    color: var(--main-color);
+}
+
+.success {
+    border-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.error {
+    border-color: var(--error-color);
+    color: var(--error-color);
+}
