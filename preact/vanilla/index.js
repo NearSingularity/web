@@ -3,9 +3,29 @@
 const { Component, h, render } = window.preact;
 
 class App extends Component {
+	shouldComponentUpdate() {
+		
+	}
+	componentWillMount() {
+		
+	}
+	componentWillUnmount() {
+		
+	}
+	componentWillUpdate() {
+		
+	}
 	componentDidMount() {
 		this.setState({ message: "Vanilla Preact -- No Babel or JSX...just h() " });
 	}
+	componentDidMUnmount() {
+		
+	}
+	componentDidUpdate() {
+		
+	}
+	
+	
 	render(props, state) {
 		return (
 			h("div", {id:"app"},

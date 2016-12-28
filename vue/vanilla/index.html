@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Vue</title>
+	</head>
+	<body>
+	    <div id="basic">
+	        {{ message }}
+	    </div>
+	    
+	    <div id="v-bind-title">
+	        <span v-bind:title="title">Hover over me!</span>
+	    </div>
+	    
+	    <div id="v-if">
+	        <button v-on:click="toggle">Toggle Element</button>
+	        <span v-if="seen">Peek-a-Boo</span>
+	    </div>
+	    
+	    <div id="v-for">
+	        <ul>
+	            <li v-for="todo in todos">
+	                {{todo.text}}
+	            </li>
+	        </ul>
+	    </div>
+	    
+	    <div id="v-model">
+	        <p>{{message}}</p>
+	        <input v-model="message">
+	    </div>
+	    
+	    <div id="vue-life">
+	        <ol>
+	            <li v-for="m in messages">{{m}}</li>
+	        </ol>
+	    </div>
+	    
+	    <div id="v-html">
+	        <div v-html="raw"></div>
+	    </div>
+	    
+	    <div id="v-on">
+	        <div v-on:click="doIt"> {{ message }} </div>
+	        <div @click="doIt"> {{ message }} </div>
+	        <p> Computed: {{ reversedMessage }} </p>
+	    </div>
+	    
+	    <div id="buttons">
+	        <p> Total : {{total}}</p>
+	        <simple-counter @update='updateTotal'></simple-counter>
+	        <simple-counter @update='updateTotal'></simple-counter>
+	        <simple-counter @update='updateTotal'></simple-counter>
+	    </div>
+	    
+	    
+	    <div id="full">
+	        
+	    </div>
+
+	    <div id="test">
+	        <table>
+	            <tr is="my-row" v-for="person in people" v-bind:person="person"></tr>
+	        </table>
+	    </div>
+	    
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
