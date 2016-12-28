@@ -80,6 +80,88 @@ class LinkedList {
     }
 }
 
+class Node {
+    constructor(val) {
+        this.left = null;
+        this.right = null;
+        this.value = val;
+    }
+}
+
+class BST {
+    constructor() {
+        this.root = null;
+    }
+    
+    push(val) {
+        let root = this.root;
+        
+        if(!root) {
+            root = new Node(val);
+            return;
+        }
+        
+        let currentNode = root;
+        let newNode = newNode(val);
+        
+        while(currentNode) {
+            if(val < currentNode.value) {
+                if(!currentNode.left) {
+                    currentNode.left = newNode;
+                    break;
+                }
+                else
+                    currentNode = currentNode.left;
+            }
+            else {
+                if(!currentNode.right) {
+                    currentNode.right = newNode;
+                    break;
+                }
+                else
+                    currentNode = currentNode.right;
+            }
+        }
+    }
+    
+    remove(val) {
+        
+    }
+    
+    preOrder(n, vals) {
+        let node = n || this.root;
+        if(node) {
+            console.log(node.value);
+            vals.push(node.value);
+            this.preOrder(node.left, vals);
+            this.preOrder(node.right, vals);
+        }
+        
+    }
+    
+    inOrder(n, vals) {
+        let node = n || this.root;
+        if(node) {
+            this.inOrder(node.left, vals);
+            console.log(node.value);
+            vals.push(node.value);
+            this.inOrder(node.right, vals);
+        }
+    }
+    
+    postOrder(n, vals) {
+        let node = n || this.root;
+        if(node) {
+            this.postOrder(node.left, vals);
+            this.postOrder(node.right, vals);
+            console.log(node.value);
+            vals.push(node.value);
+        }
+    }
+    
+    
+}
+
 // Functions
 
 function swap(arr, i, j) {
