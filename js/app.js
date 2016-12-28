@@ -4,7 +4,8 @@ class Component {
     constructor() {
         this.state = { 
             current: {
-                counter: 0
+                counter: 0,
+                wishList: ["Job", "Money", "Fame"]
             },
             //|state.get()
             //| gets the state
@@ -20,29 +21,63 @@ class Component {
             }
         };
         this.view = {
+            //Example: independent counter with external HTML container
             counter(data) {
-                document.getElementById("counter").innerHTML = "<div id='counter'>"+data.counter+"</div>";
+                document.getElementById("counter").innerHTML = "<span>"+data+"</span>";
+            },
+            //Example: Sub-view with contained markup
+            wishList(data) {
+                let container = document.getElementById("my-list");
+                if(container) {
+                    container.innerHTML = '';
+                    data.map(li => {
+                        let litem = document.createElement("li");
+                        litem.innerHTML = li;
+                        container.appendChild(litem);
+                    });
+                }
+                else {
+                    let list = document.createElement("ol");
+                    list.setAttribute("id", "my-list");
+                    
+                    data.map(li => {
+                        let litem = document.createElement("li");
+                        litem.innerHTML = li;
+                        list.appendChild(litem);
+                    });
+                    document.getElementById("body").appendChild(list);
+                }
             }
         }
+        this._render(["counter", "wishList"]); //Explicit call to render out the components...grows linearly.
     }
     
-    setState(val){
+    //setState({key: newVal})
+    //| should be the only entry point to modify component
+    setState(newState){
         let state = this.state.current;
         let keys = [];
         
-        if(!val)
-            return state;
+        if(!newState)
+            return this;
         
-        for(let key in val) {
+        for(let key in newState) {
             keys.push(key);
-            state[key] = val[key];
+
+            state[key] = newState[key];
         }
         
-        this.render(keys);
+        this._render(keys);
+        
+        return this;
     }
     
-    render(keys) {
+    _render(keys) {
         let state = this.state.current;
+        
+        if(!keys) {
+            return;
+        }
         
         for(let i = 0; i < keys.length; i++) {
             let key = keys[i];
