@@ -47,13 +47,17 @@
             nextColor() {
                 let colors = this.colors;
                 
-                if(this.step < colors.length)
-                    $("body").css("background-color", colors[this.step++]);
+                if(this.step < colors.length) {
+                    let color = colors[this.step++];
+                    $("body").css("background-color", color);
+                }
                 else
                     this.step = 0;
             },
             nextView() {
+                console.log('oh uh')
                 clearInterval(this.iid);
+                $("body").css("background-color", "#FFF");
                 this.$emit("change", "next");
             }
         },

@@ -1,10 +1,13 @@
-<style>
+<style scoped>
 
+    #logo {
+        transform: rotate(180deg);
+    }
 </style>
 
 <template>
-    <div class="flex-container center-start col">
-        <h1> HI </h1>
+    <div class="flex-container center-center col">
+        <img id="logo" src="src/img/logo.png" @click="nextView">
     </div>
 </template>
 
@@ -18,10 +21,12 @@
             };
         },
         methods: {
-
+            nextView() {
+                this.$emit("change", "intro");
+            }
         },
         created() {
-            let self = this;
+            
         }
     };
 </script>
