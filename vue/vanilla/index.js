@@ -176,31 +176,53 @@ let fullExample = new Vue({
 
 
 
-// Interview Answer using Vue.js
+Vue.component("my-app", {
+    template: "<div id='app'></div>",
+    data() {
+        
+    }
+})
 
-Vue.component("my-row", {
+Vue.component("my-child", {
+    data() {
+        message: "Hi"
+    }
+})
+
+
+
+// Interview Answer using Vue.js
+Vue.component("user-row", {
     props: ["person"],
     template: "<tr><td>{{ person.name }}</td><td>{{ person.email }}</td></tr>"
+});
+
+
+Vue.component('user-table', {
+    template: "<table><user-row v-for='person in people' :person='person'></user-row></table>",
+    data() {
+        return { 
+            people: [
+                {
+                    name: 'James',
+                    email: 'james@gmail.com'   
+                },
+                {
+                    name: 'Jones',
+                    email: 'jones@gmail.com'   
+                }, 
+                {
+                    name: 'Donald',
+                    email: 'don@yahoo.com' 
+                }
+            ]
+        };
+    }
 });
 
 let test = new Vue({
     el: "#test",
     data: {
-        people: [
-            {
-                name: 'James',
-                email: 'james@gmail.com'   
-            },
-            {
-                name: 'Jones',
-                email: 'jones@gmail.com'   
-            }, 
-            {
-                name: 'Donald',
-                email: 'don@yahoo.com' 
-            }
-        ]
+        
     }
 });
-
-
