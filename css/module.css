@@ -4,6 +4,54 @@
     pointer-events: none;
 }
 
+/* NAV */
+.nav {
+    
+}
+
+.fixed-nav {
+    position: absolute;
+    z-index: 9000;
+}
+
+.nav,
+.fixed-nav {
+    padding: 10px 15px;
+}
+
+.nav.full,
+.fixed-nav.full {
+    width: 100%;
+}
+
+.fixed-nav.top-right {
+    top: 2%;
+    right: 3%;
+}
+
+.fixed-nav.top-left {
+    top: 2%;
+    left: 3%;
+}
+
+.main-nav {
+    margin: 0 15px;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+@media (max-width: 765px) {
+    .mobile-nav {
+        display: block;
+    }
+    .main-nav {
+        display: none;
+    }
+}
+
+
 /* Overlays/Screens */
 
 .overlay {

@@ -17,6 +17,10 @@ body {
     color: var(--main-color);
 }
 
+.primary {
+    
+}
+
 .success {
     border-color: var(--success-color);
     color: var(--success-color);
