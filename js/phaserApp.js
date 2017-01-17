@@ -18,15 +18,15 @@ $(function(){
                     
                 },
                 create() {
-                    this.game.state.start("play");
+                    this.game.state.start("load");
                 }
             },
             load: {
                 preload() {
-                    
+                
                 },
                 create() {
-                    
+                    this.game.state.start("menu");
                 }
             }, 
             menu: {
@@ -37,7 +37,7 @@ $(function(){
                     
                 },
                 update() {
-                    
+                    //this.game.state.start("play");
                 },
                 render() {
                     
@@ -51,7 +51,7 @@ $(function(){
                     
                 },
                 update() {
-                    
+                    //this.game.state.start("menu");
                 },
                 render() {
                     
