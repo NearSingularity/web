@@ -70,7 +70,7 @@
 }
 
 /**
- * Container Align Classes: .align-*, * can be start, end, center, stretch
+ * Container Align Classes: .align-*, * can be start, end, center, or stretch
  * Use these to explicitly set the `align-items` property to your container
  */
 
@@ -95,7 +95,7 @@
 }
 
 /**
- * Container Justify Classes: .justify-*, * can be start, end, center, around, between
+ * Container Justify Classes: .justify-*, * can be start, end, center, around, or between
  * Use these to explicitly set the `justify-content` property to your container
  */
 
