@@ -1,3 +1,14 @@
+/**
+ * .flex vs .flex-container
+ * .flex: Used when content determines the size of the container
+ * .flex-container: Used when you want the container to fill 100% of the width of the parent container
+ * 
+ * Example: (TODO)
+ * ```
+ * <div class="flex"> </div>
+ * <div class="flex-container"> </div>
+ * ```
+ */
 .flex,
 .flex-container {
   position: relative;
@@ -8,21 +19,60 @@
   width: 100%;
 }
 
+/**
+ * Container Augment Classes: .row, .col, .wrap
+ * Use these to modify your flex containers as you see fit and be able to toggle them on or off
+ */
+
+/**
+ * .row
+ * 
+ * Example: (TODO)
+ * ```
+ * <div class="flex row"> </div>
+ * <div class="flex-container row"> </div>
+ * ```
+ */
+
 .flex.row,
 .flex-container.row {
   flex-direction: row;
 }
+
+/**
+ * .col
+ * 
+ * Example: (TODO)
+ * ```
+ * <div class="flex col"> </div>
+ * <div class="flex-container col"> </div>
+ * ```
+ */
 
 .flex.col,
 .flex-container.col {
   flex-direction: column;
 }
 
+/**
+ * .wrap
+ * 
+ * Example: (TODO)
+ * ```
+ * <div class="flex wrap"> </div>
+ * <div class="flex-container wrap"> </div>
+ * ```
+ */
+
 .flex.wrap,
 .flex-container.wrap {
   flex-wrap: wrap;
 }
 
+/**
+ * Container Align Classes: .align-*, * can be start, end, center, stretch
+ * Use these to explicitly set the `align-items` property to your container
+ */
 
 .flex.align-start,
 .flex-container.align-start {
@@ -44,6 +94,10 @@
   align-items: stretch;
 }
 
+/**
+ * Container Justify Classes: .justify-*, * can be start, end, center, around, between
+ * Use these to explicitly set the `justify-content` property to your container
+ */
 
 .flex.justify-start,
 .flex-container.justify-start {
@@ -70,6 +124,11 @@
   justify-content: space-between;
 }
 
+/**
+ * Container Shorthand Align-Justify Classes
+ * Use these to set both the `align-items` and `justify-content` properties at the same time.
+ * Important: Align items always comes first then followed by Justify content after the hyphen.
+ */
 
 .flex.center-start,
 .flex-container.center-start {

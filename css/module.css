@@ -16,7 +16,7 @@
 
 .nav,
 .fixed-nav {
-    padding: 10px 15px;
+    padding: 10px;
 }
 
 .nav.full,
@@ -35,10 +35,11 @@
 }
 
 .main-nav {
-    margin: 0 15px;
+    
 }
 
 .mobile-nav {
+    border-radius: 50%;
     display: none;
 }
 
