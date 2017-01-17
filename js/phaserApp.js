@@ -10,8 +10,8 @@ $(function(){
         },
         view: {
             /* props */
-            width: $(window).innerWidth(),
-            height: $(window).innerHeight(),
+            width: $(window).innerWidth() * window.devicePixelRatio,
+            height: $(window).innerHeight() * window.devicePixelRatio,
             game: null,
             boot: {
                 preload() {
@@ -71,8 +71,8 @@ $(function(){
             },
             listen() {
                 $(window).resize(function(e){
-                    this.width = $(window).innerWidth();
-                    this.height = $(window).innerHeight();
+                    this.width = $(window).innerWidth() * window.devicePixelRatio;
+                    this.height = $(window).innerHeight() * window.devicePixelRatio;
                     this.game.width = this.width;
                     this.game.height = this.height;
                 }.bind(this));
