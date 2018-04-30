@@ -1,38 +1,37 @@
-// Classes
 class LinkedList {
     constructor() {
         this.length = 0;
         this.head   = null;
     }
-    
+
     add(data) {
         let node = {
             data,
             next: null
         };
         let current;
-        
+
         if(this.head == null)
             this.head = node;
         else {
             current = this.head;
-            
-            while(current.next) 
+
+            while(current.next)
                 current = current.next;
-            
+
             current.next = node;
         }
         this.length++;
     }
-    
+
     remove(index) {
         if(index <= -1 || index >= this.length)
             return null;
-            
+
         let current = this.head;
         let i       = 0;
         let previous;
-        
+
         if(index == 0)
             this.head = current.next;
         else {
@@ -45,36 +44,36 @@ class LinkedList {
         this.length--;
         return current.data;
     }
-    
+
     item(index) {
         if(index <= -1 || index >= this.length)
             return null;
-        
+
         let current = this.head;
         let i       = 0;
-        
+
         while(i++ < index)
             current = current.next;
-        
+
         return current.data;
     }
-    
+
     toArray() {
         let result = [];
         let current = this.head;
-        
+
         while(current) {
             result.push(current.data);
             current = current.next;
         }
-        
+
         return result;
     }
-    
+
     toString() {
         return this.toArray().toString();
     }
-    
+
     size() {
         return this.length;
     }
@@ -92,18 +91,18 @@ class BST {
     constructor() {
         this.root = null;
     }
-    
+
     push(val) {
         let root = this.root;
-        
+
         if(!root) {
             root = new Node(val);
             return;
         }
-        
+
         let currentNode = root;
         let newNode = newNode(val);
-        
+
         while(currentNode) {
             if(val < currentNode.value) {
                 if(!currentNode.left) {
@@ -123,11 +122,11 @@ class BST {
             }
         }
     }
-    
+
     remove(val) {
-        
+
     }
-    
+
     preOrder(n, vals) {
         let node = n || this.root;
         if(node) {
@@ -136,9 +135,9 @@ class BST {
             this.preOrder(node.left, vals);
             this.preOrder(node.right, vals);
         }
-        
+
     }
-    
+
     inOrder(n, vals) {
         let node = n || this.root;
         if(node) {
@@ -148,7 +147,7 @@ class BST {
             this.inOrder(node.right, vals);
         }
     }
-    
+
     postOrder(n, vals) {
         let node = n || this.root;
         if(node) {
@@ -158,21 +157,20 @@ class BST {
             vals.push(node.value);
         }
     }
-    
-    
+
+
 }
 
-// Functions
 
 function swap(arr, i, j) {
     [arr[j], arr[i]] = [arr[i], arr[j]];
 }
 
 function partition(arr, left, right) {
-    let pivot = arr[Math.floor((right + left)/2)];
+    const pivot = arr[Math.floor((right + left) / 2)];
     let i = left;
     let j = right;
-    
+
     while(i <= j) {
         while(arr[i] < pivot)
             i++;
@@ -184,25 +182,25 @@ function partition(arr, left, right) {
             j--;
         }
     }
-    
+
     return i;
 }
 
 function bubbleSort(arr) {
-    let length = arr.length;
-    
-    for(let i = 0; i < length - 1; i++) 
-        for(let j = 0; j < length - 1; j++) 
+    const length = arr.length;
+
+    for(let i = 0; i < length - 1; i++)
+        for(let j = 0; j < length - 1; j++)
             if(arr[j] > arr[j + 1])
                 swap(arr, j, j+1)
-    
+
     return arr;
 }
 
 function insertionSort(arr) {
-    let length = arr.length;
+    const length = arr.length;
     let value, i, j;
-    
+
     for(i = 0; i < length; i++) {
         value = arr[i];
         for(j = i-1; j > -1 && arr[j] > value; j--) {
@@ -210,7 +208,7 @@ function insertionSort(arr) {
         }
         arr[j+1] = value;
     }
-    
+
     return arr;
 }
 
@@ -222,14 +220,14 @@ function quickSort(arr, left, right) {
         left = 0;
     if(!right)
         right = arr.length - 1;
-    
+
     let index = partition(arr, left, right);
-    
+
     if(left < index - 1)
         quickSort(arr, left, index - 1);
     if(index < right)
         quickSort(arr, index, right);
-    
+
     return arr;
 }
 

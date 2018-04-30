@@ -1,0 +1,21 @@
+@mixin breakpoint($minimum) {
+  @media (min-width: $minimum) {
+    @content;
+  }
+}
+
+@mixin hoverable {
+  // TODO: relies on JS snippet:
+  /*
+  if (!(('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0))) { document.documentElement.classList.add('cursor') }
+  */
+  :global(.cursor) & {
+    @content;
+  }
+  /*
+  TODO: _if_ spec matures
+  @media (pointer: fine) {
+
+  }
+  */
+}

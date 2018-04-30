@@ -6,7 +6,7 @@
 :root {
     --main-bg-color: #FFF;
     --main-color: #000;
-    
+
     --success-color: #4CAF50;
     --error-color: #F44336;
 }
@@ -17,16 +17,31 @@ body {
     color: var(--main-color);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
 .primary {
-    
+
 }
 
 .success {
-    border-color: var(--success-color);
     color: var(--success-color);
 }
 
 .error {
-    border-color: var(--error-color);
     color: var(--error-color);
+}
+
+.ghost {
+    opacity: 0;
+    pointer-events: none;
 }

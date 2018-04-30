@@ -1,11 +1,11 @@
 /**
  * .flex vs .flex-container
- * .flex: Used when content determines the size of the container
+ * .flex: Used when content determines the size of the container used with an inline element
  * .flex-container: Used when you want the container to fill 100% of the width of the parent container
- * 
+ *
  * Example: (TODO)
  * ```
- * <div class="flex"> </div>
+ * <span class="flex"> </span>
  * <div class="flex-container"> </div>
  * ```
  */
@@ -26,7 +26,7 @@
 
 /**
  * .row
- * 
+ *
  * Example: (TODO)
  * ```
  * <div class="flex row"> </div>
@@ -41,7 +41,7 @@
 
 /**
  * .col
- * 
+ *
  * Example: (TODO)
  * ```
  * <div class="flex col"> </div>
@@ -56,7 +56,7 @@
 
 /**
  * .wrap
- * 
+ *
  * Example: (TODO)
  * ```
  * <div class="flex wrap"> </div>
@@ -244,11 +244,11 @@
 .flex.end-around,
 .flex-container.end-around {
   align-items: flex-end;
-  justify-content: space-around;    
+  justify-content: space-around;
 }
 
 .flex.end-between,
 .flex-container.end-between {
   align-items: flex-end;
-  justify-content: space-between;  
+  justify-content: space-between;
 }
