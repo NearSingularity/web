@@ -1,10 +1,11 @@
+@import 'config';
+
 // GRID
 $grid-column-count: 12;
 $grid-column-count-m: $grid-column-count / 2;
 $max-grid-width: 1280px;
 $grid-spacing: 30px;
 
-// COLORS
 $light-grey: #dadada;
 $white: #fff;
 $black: #000;
@@ -16,13 +17,6 @@ $tablet: 768px;
 $laptop: 1024px;
 $desktop: 1280px;
 $desktop-plus-spacing: $desktop + $grid-spacing;
-
-// SPACING
-$spacing-tiny: 10px;
-$spacing-small: 20px;
-$spacing-medium: 30px;
-$spacing-large: 60px;
-$spacing-xlarge: 120px;
 
 // Easing Functions
 $ease-in-quad:      cubic-bezier(0.550,  0.085, 0.680, 0.530);

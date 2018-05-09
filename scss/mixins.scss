@@ -1,5 +1,5 @@
-@mixin breakpoint($minimum) {
-  @media (min-width: $minimum) {
+@mixin breakpoint($min) {
+  @media (min-width: $min) {
     @content;
   }
 }
@@ -18,4 +18,36 @@
 
   }
   */
+}
+
+@mixin overflow-text($height) {
+  overflow: hidden;
+  height: $height;
+
+  > :first-child {
+    float: right;
+    width: 100%;
+    margin-left: -1px;
+  }
+
+  &:before {
+    content: '';
+    float: left;
+    height: 100%;
+    width: 1px;
+  }
+
+  &:after {
+    content: "\02026";
+    box-sizing: content-box;
+    position: relative;
+    float: right;
+    text-align: right;
+    top: -25px;
+    left: 100%;
+    width: 2.25em;
+    padding-right: 1px;
+    margin-left: -2.25em;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+  }
 }
